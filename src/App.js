@@ -1,4 +1,5 @@
 // App.js
+// Parent file which does the  all kind of render logic
 import React, { useEffect, useState } from "react";
 import { fetchTransactionData } from "./api";
 import { groupByMonth } from "./utils";
@@ -8,6 +9,8 @@ const App = () => {
   const [data, setData] = useState(null);
   const [summary, setSummary] = useState({});
 
+
+// this act as lifecycle method this will trigger fetch api call on component on dom
   useEffect(() => {
     const fetchData = async () => {
       const transactions = await fetchTransactionData();
@@ -18,6 +21,7 @@ const App = () => {
 
     fetchData();
   }, []);
+
 
   const renderSummary = () => {
     return Object.entries(summary).map(([customerId, months]) => (
