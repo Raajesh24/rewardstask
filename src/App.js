@@ -22,6 +22,7 @@ const App = () => {
     fetchData();
   }, []);
 
+  //this function is use to render the logic and dislay in ui
 
   const renderSummary = () => {
     return Object.entries(summary).map(([customerId, months]) => (
